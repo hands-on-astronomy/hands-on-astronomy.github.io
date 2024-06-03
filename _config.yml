@@ -1,19 +1,69 @@
-### basic settings
-
 # site properties and page defaults
 title: Hands-On Astronomy
-subtitle: Organizing Committee of the Ecuadorian Olympiads on Astronomy and Astrophysics
-description: Workshops, courses and opportunities for instructors.
-logo-text: false
-header: images/background.jpg
-footer: images/background.jpg
-header-dark: false
-footer-dark: false
-proofer: false
+subtitle: OEAA Organizing Committee
+description: Estudiantes de pregrado y profesionales en ciencias aportando al avance de la educación en astronomía en Ecuador.
+header: images/background.png
+footer: images/background.png
 
 # site social media and other links
 links:
-  email: info@oeaa-astro.org
+  email: h-oa@oeaa-astro.org
+  facebook: oeaa_ec
   instagram: oeaa_ec
 
-### Jekyll settings to ignore
+### jekyll settings
+
+# front matter defaults
+defaults:
+  # all markdown files
+  - scope:
+      path: ""
+    values:
+      layout: default
+  # markdown files in /_members
+  - scope:
+      type: "members"
+    values:
+      layout: member
+  # markdown files in /_posts
+  - scope:
+      type: "posts"
+    values:
+      layout: post
+
+collections:
+  # generate page for each member
+  members:
+    output: true
+  # generate page for each post
+  posts:
+    output: true
+
+# jekyll plugins
+plugins:
+  - jekyll-spaceship
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-last-modified-at
+
+# code block syntax highlighting
+highlighter: rouge
+
+# jekyll theme
+theme: null
+
+# sass settings
+sass:
+  sass_dir: _styles
+
+# force jekyll to include certain files/folders
+include:
+  - _styles
+  - _scripts
+
+# force jekyll to exclude certain files/folders
+exclude:
+  - README.md
+  - LICENSE.md
+  - CITATION.cff
